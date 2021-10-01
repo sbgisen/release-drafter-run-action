@@ -1,8 +1,12 @@
 name: Release Drafter
 description: 'Release drafter action'
 
+inputs:
+  token:
+    description: 'github access token'
+    required: true
+    default: ''
 runs:
-
   using: "composite"
   steps:
     # Drafts your next Release notes as Pull Requests are merged into "master"
@@ -12,4 +16,4 @@ runs:
         config-name: config/release-drafter.yml
       #   disable-autolabeler: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.token }}
