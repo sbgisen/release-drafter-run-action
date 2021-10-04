@@ -16,8 +16,8 @@ runs:
     - name: run Release Drafter
       uses: release-drafter/release-drafter@v5
       # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
-      with:
-        config-name: ${{ env.CONFIG_FILE }}
+      # with:
+        # config-name: ${{ env.CONFIG_FILE }}
       #   disable-autolabeler: true
       env:
         GITHUB_TOKEN: ${{ inputs.token }}
