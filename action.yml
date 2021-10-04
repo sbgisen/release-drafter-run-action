@@ -10,7 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo "CONFIG_FILE=$GITHUB_ACTION_PATH/config/release-drafter.yml" >> $GITHUB_ENV
+    - run: ls $GITHUB_ACTION_PATH && echo "CONFIG_FILE=$GITHUB_ACTION_PATH/config/release-drafter.yml" >> $GITHUB_ENV
       shell: bash
     # Drafts your next Release notes as Pull Requests are merged into "master"
     - name: run Release Drafter
