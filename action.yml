@@ -12,6 +12,7 @@ runs:
   steps:
     - name: copy config file to github_action_path
       run: cp ${{ github.action_path }}/config/release-drafter.yml ./release-drafter.yml
+      shell: bash
     # Drafts your next Release notes as Pull Requests are merged into "master"
     - name: run Release Drafter
       uses: release-drafter/release-drafter@v5
