@@ -10,9 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: pwd && cp ${{ github.action_path }}/config/release-drafter.yml .github/release-drafter.yml 
-      shell: bash
-    - run: ls .github
+    - run: pwd && ls -a && cp ${{ github.action_path }}/config/release-drafter.yml .github/release-drafter.yml 
       shell: bash
     # Drafts your next Release notes as Pull Requests are merged into "master"
     - name: run Release Drafter
