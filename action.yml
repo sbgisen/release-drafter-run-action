@@ -10,15 +10,14 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: mkdir -p .github && cp config/release-drafter.yml .github/release-drafter.yml 
+    - run: echo "CONFIG_FILE=$GITHUB_ACTION_PATH/config/release-drafter.yml" >> $GITHUB_ENV
       shell: bash
-      working-directory: ${{ github.action_path }}
     # Drafts your next Release notes as Pull Requests are merged into "master"
     - name: run Release Drafter
       uses: release-drafter/release-drafter@v5
       # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
       with:
-        config-name: release-drafter.yml
+        config-name: ${{ env.CONFIG_FILE }}
       #   disable-autolabeler: true
       env:
         GITHUB_TOKEN: ${{ inputs.token }}
